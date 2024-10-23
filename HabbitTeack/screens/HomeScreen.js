@@ -10,6 +10,7 @@ const HomeScreen = ({ navigation }) => {
 
   // Load habits from AsyncStorage when the app starts
   useEffect(() => {
+
     const loadHabits = async () => {
       try {
         const storedHabits = await AsyncStorage.getItem('habits');
@@ -22,6 +23,7 @@ const HomeScreen = ({ navigation }) => {
     };
 
     loadHabits();
+    
   }, []);
 
   // Function to render each habit in a HabitCard

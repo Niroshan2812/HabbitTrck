@@ -13,7 +13,11 @@ const AddHabitScreen = ({ navigation }) => {
       try {
         const existingHabits = await AsyncStorage.getItem('habits');
         const parsedHabits = existingHabits ? JSON.parse(existingHabits) : [];
-        const newHabit = { id: Date.now().toString(), name: habitName, streak: 0 };
+        const newHabit = {
+           id: Date.now().toString(), 
+           name: habitName, //get from textinput
+           streak: 0 
+          };
 
         parsedHabits.push(newHabit);
         await AsyncStorage.setItem('habits', JSON.stringify(parsedHabits));

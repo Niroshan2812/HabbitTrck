@@ -51,6 +51,12 @@ const getLast7Days =()=>{
 
       {/* Display last 7 days progress*/}
       <View style={styles.progress}>
+        {getLast7Days().map ((day, index)=>(
+          <View key={index} style={styles.dayBox}> 
+            <Text>{day}</Text>
+            <Text>{completed ? "✔" :"✘" }</Text>
+          </View>
+        ))}
       
 
 
@@ -95,6 +101,9 @@ const styles = StyleSheet.create({
   buttonText: {
     color: '#fff',
     fontWeight: 'bold',
+  },
+  dayBox:{
+    alignItems:'center'
   },
 });
 
